@@ -1,4 +1,10 @@
-import type { AuthInfo } from "@modelcontextprotocol/sdk/server/auth/types.js";
+// AuthInfo type inlined to avoid @modelcontextprotocol/sdk dependency
+type AuthInfo = {
+  token: string;
+  scopes: string[];
+  clientId: string;
+  extra?: Record<string, unknown>;
+};
 import { createMcpHandler, withMcpAuth } from "mcp-handler";
 import { z } from "zod";
 
